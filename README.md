@@ -7,16 +7,13 @@ O objetivo é permitir que usuários [descrever quem são os usuários: produtor
 
 ## ✨ Funcionalidades Principais  
 - Funcionalidade 1 — ex: Cadastro de fazendas / áreas agrícolas  
-- Funcionalidade 2 — ex: Registro de safras e culturas  
-- Funcionalidade 3 — ex: Monitoramento de atividades / histórico de plantio  
-- Funcionalidade 4 — ex: Geração de relatórios / exportação de dados  
+- Funcionalidade 2 — ex: Registro de safras e quantidade  
+- Funcionalidade 3 — ex: Monitoramento do controle de insumo / histórico de plantio  
+- Funcionalidade 4 — ex: Geração de rendimento / exportação de dados e gráficos
 - Funcionalidade 5 — ex: Autenticação de usuários / permissões / login  
 
 ## 🛠 Tecnologias Utilizadas  
-- Linguagem / framework Front-end: …  
-- Back-end / API / servidor: …  
-- Banco de dados: …  
-- Outras dependências / bibliotecas / serviços: …  
+- Linguagem / framework Front-end: MVC com C#, HTML com BootStrap
 
 ## 🚀 Como Executar / Instalar (para desenvolvedores)  
 1. Clone este repositório:  
