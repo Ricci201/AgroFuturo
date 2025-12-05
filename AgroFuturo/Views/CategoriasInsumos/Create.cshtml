@@ -1,48 +1,65 @@
 ﻿@model AgroFuturo.Models.CategoriaInsumo
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>CategoriaInsumo</h4>
+<h1 class="text-dark text-center">Adicionar<span class="fw-bold"> Categoria</span></h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Categoria" class="control-label"></label>
-                <input asp-for="Categoria" class="form-control" />
-                <span asp-validation-for="Categoria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UnidadeMedida" class="control-label"></label>
-                <input asp-for="UnidadeMedida" class="form-control" />
-                <span asp-validation-for="UnidadeMedida" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quantidade" class="control-label"></label>
-                <input asp-for="Quantidade" class="form-control" />
-                <span asp-validation-for="Quantidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+	<div class="col-12">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Nome" class="control-label"></label>
+				<input asp-for="Nome" class="form-control" />
+				<span asp-validation-for="Nome" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Categoria" class="control-label"></label>
+				<input asp-for="Categoria" class="form-control" />
+				<span asp-validation-for="Categoria" class="text-danger"></span>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+				<label class="form-check-label" for="radioDefault1">
+					Quilogramas
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+				<label class="form-check-label" for="radioDefault2">
+					Gramas
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+				<label class="form-check-label" for="radioDefault2">
+					Tonelada
+				</label>
+			</div>
+			<div class="form-group">
+				<label asp-for="Quantidade" class="control-label"></label>
+				<input asp-for="Quantidade" class="form-control" />
+				<span asp-validation-for="Quantidade" class="text-danger"></span>
+			</div>
+			<div class="row gap-3 mt-3 mb-3">
+				<div class="col-12 d-flex justify-content-between">
+					<div>
+						<a asp-action="Index" class="btn btn-danger">Cancelar</a>
+					</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+					<div class="form-group">
+						<input type="submit" value="Criar" class="btn btn-primary" />
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

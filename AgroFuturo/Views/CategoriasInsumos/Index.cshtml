@@ -4,10 +4,17 @@
 	ViewData["Title"] = "Index";
 }
 
-<h1>Categorias de Insumo</h1>
+<h1 class="text-center">Categorias de Insumo</h1>
+
+<form asp-action="Index" method="get" method="get" class="mb-3">
+	<div class="input-group">
+		<input type="text" name="busca" class="form-control" placeholder="Buscar por nome da Categoria..." value=@ViewData["termoBusca"] />
+		<button class="btn btn-primary" type="submit">Buscar</button>
+	</div>
+</form>
 
 <p>
-	<a asp-action="Create">Criar Novo</a>
+	<a asp-action="Create" class="btn btn-success">Criar Novo</a>
 </p>
 <table class="table">
 	<thead>
@@ -44,9 +51,8 @@
 					@Html.DisplayFor(modelItem => item.Quantidade)
 				</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@item.CategoriaInsumoId">Editar</a> |
-					<a asp-action="Details" asp-route-id="@item.CategoriaInsumoId">Detalhes</a> |
-					<a asp-action="Delete" asp-route-id="@item.CategoriaInsumoId">Deletar</a>
+					<a asp-action="Edit" asp-route-id="@item.CategoriaInsumoId" class="btn btn-primary">Editar</a> |
+					<a asp-action="Delete" asp-route-id="@item.CategoriaInsumoId" class="btn btn-danger">Deletar</a>
 				</td>
 			</tr>
 		}

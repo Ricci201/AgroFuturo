@@ -1,35 +1,42 @@
 ﻿@model IEnumerable<AgroFuturo.Models.Equipamento>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Equipamentos</h1>
+
+<form asp-action="Index" method="get" method="get" class="mb-3">
+	<div class="input-group">
+		<input type="text" name="busca" class="form-control" placeholder="Buscar por nome da Categoria..." value=@ViewData["termoBusca"] />
+		<button class="btn btn-primary" type="submit">Buscar</button>
+	</div>
+</form>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-success">Criar Novo</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EquipamentoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EquipamentoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EquipamentoId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nome)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nome)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.EquipamentoId" class="btn btn-primary">Editar</a> |
+					<a asp-action="Delete" asp-route-id="@item.EquipamentoId" class="btn btn-danger">Deletar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

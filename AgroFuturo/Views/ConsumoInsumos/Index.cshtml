@@ -1,71 +1,78 @@
 ﻿@model IEnumerable<AgroFuturo.Models.ConsumoInsumo>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Consumo de Insumo</h1>
+
+<form asp-action="Index" method="get" method="get" class="mb-3">
+	<div class="input-group">
+		<input type="text" name="busca" class="form-control" placeholder="Buscar por nome da Categoria..." value=@ViewData["termoBusca"] />
+		<button class="btn btn-primary" type="submit">Buscar</button>
+	</div>
+</form>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-success">Criar Novo</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.QuantidadeConsumida)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SafraInicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SafraFim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustoTotal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Equipamento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoriaInsumo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fazenda)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuantidadeConsumida)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SafraInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SafraFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustoTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Equipamento.EquipamentoId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoriaInsumo.CategoriaInsumoId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fazenda.FazendaId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ConsumoInsumoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ConsumoInsumoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ConsumoInsumoId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.QuantidadeConsumida)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SafraInicio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SafraFim)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CustoTotal)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Equipamento)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CategoriaInsumo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Fazenda)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.QuantidadeConsumida)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SafraInicio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SafraFim)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CustoTotal)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Equipamento.EquipamentoId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CategoriaInsumo.CategoriaInsumoId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Fazenda.FazendaId)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ConsumoInsumoId" class="btn btn-primary">Editar</a> |
+					<a asp-action="Delete" asp-route-id="@item.ConsumoInsumoId" class="btn btn-danger">Deletar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>
